@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kiran Madini Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #00a8ff;
+      --background: #f5f6fa;
+      --text: #2f3640;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    body {
+      background: var(--background);
+      color: var(--text);
+      scroll-behavior: smooth;
+      scroll-padding-top: 80px; /* ✅ Fixes hidden headings */
+    }
+
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: var(--text);
+      padding: 10px 0;
+      text-align: right;
+      z-index: 1000;
+    }
+
+    nav a {
+      margin: 0 15px;
+      color: #fff;
+      font-weight: bold;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      color: var(--primary);
+    }
+
+    header {
+      background: var(--text);
+      color: #fff;
+      text-align: center;
+      padding: 120px 20px 40px;
+    }
+
+    #typing-text {
+      font-size: 2.5em;
+      font-weight: bold;
+    }
+
+    .cursor {
+      display: inline-block;
+      width: 2px;
+      height: 1em;
+      background: white;
+      animation: blink 1s infinite;
+    }
+
+    @keyframes blink {
+      50% { opacity: 0; }
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: auto;
+      padding: 40px 20px;
+    }
+
+    section {
+  margin-bottom: 60px;
+  scroll-margin-top: 100px; 
+}
+
+
+    h2 {
+      font-size: 2em;
+      color: #353b48;
+      border-left: 5px solid var(--primary);
+      padding-left: 10px;
+      margin-bottom: 20px;
+    }
+
+    .grid {
+      display: grid;
+      gap: 20px;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+
+    .card {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+      opacity: 0;
+    }
+
+    .card:hover {
+      transform: scale(1.05);
+    }
+
+    .card.appear {
+      opacity: 1 !important;
+      transition: opacity 0.8s ease-in;
+    }
+
+    footer {
+      background: #2f3640;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .dark {
+      --background: #2f3640;
+      --text: #f5f6fa;
+    }
+
+    .dark .card {
+      background: #353b48;
+    }
+
+    #darkToggle {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background: #353b48;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 10px;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    }
+
+    .contact-info a {
+      color: #00a8ff;
+      text-decoration: none;
+      margin: 0 5px;
+    }
+
+    .profile-header {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .profile-header img {
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid #00a8ff;
+    }
+
+    .resume-button {
+      margin-top: 10px;
+      background-color: #00a8ff;
+      color: white;
+      padding: 10px 22px;
+      border-radius: 8px;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      max-width: 600px;
+      margin-top: 20px;
+    }
+
+    input, textarea {
+      padding: 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    button[type="submit"] {
+      background: var(--primary);
+      color: white;
+      border: none;
+      padding: 10px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ✅ NAVBAR -->
+  <nav>
+    <a href="#about">About</a>
+    <a href="#education">Education</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#certificates">Certificates</a>
+    <a href="#profiles">Profiles</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <!-- ✅ HEADER -->
+  <header>
+    <div class="profile-header">
+      <img src="kiranpassword.jpeg" alt="Kiran Madini">
+      <div id="typing-text"></div><span class="cursor"></span>
+      <p class="contact-info">
+        📍 Hyderabad, India |
+        📧 <a href="mailto:kiranmadine878@gmail.com">Gmail</a> |
+        🐙 <a href="https://github.com/kiranmadini" target="_blank">GitHub</a> |
+        💼 <a href="https://www.linkedin.com/in/kiran-madini-39224b331" target="_blank">LinkedIn</a> |
+        📞 +91 7569348057
+      </p>
+      <a class="resume-button" href="resumekiran.pdf" target="_blank">📄 Resume</a>
+    </div>
+  </header>
+
+  <div class="container">
+
+    <section id="about">
+      <h2>About Me</h2>
+      <p>I’m Kiran Madini, a frontend developer and Java enthusiast passionate about building responsive, elegant websites and applications. With strong fundamentals in data structures, I blend creativity with clean code to build digital experiences.</p>
+    </section>
+
+    <section id="education">
+      <h2>Education</h2>
+      <ul>
+        <li><strong>CMR College of Engineering and Technology (2022–2026)</strong> - B.Tech in CSE | CGPA: 8.00</li>
+        <li><strong>Narayana Junior College (2020–2022)</strong> - MPC | Marks: 986</li>
+        <li><strong>Matrusri High School (2020)</strong> - SSC | CGPA: 10.0</li>
+      </ul>
+    </section>
+
+    <section id="skills">
+      <h2>Skills</h2>
+      <div class="grid">
+        <div class="card">Java</div>
+        <div class="card">C/C++</div>
+        <div class="card">Python</div>
+        <div class="card">HTML</div>
+        <div class="card">CSS</div>
+        <div class="card">JavaScript</div>
+        <div class="card">MySQL</div>
+        <div class="card">Docker</div>
+        <div class="card">Git/GitHub</div>
+        <div class="card">Tableau</div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <h2>Projects</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>Personal Portfolio Website</h3>
+          <p>Developed using HTML & CSS with clean UI and responsiveness.</p>
+          <a href="https://github.com/kiranmadini/PersonalPortfolio" target="_blank">[GitHub]</a>
+        </div>
+        <div class="card">
+          <h3>AI Assistant Portfolio</h3>
+          <p>AI-powered chatbot with speech recognition and dark mode toggle.</p>
+          <a href="https://github.com/kiranmadini/Ai-Assistant" target="_blank">[GitHub]</a>
+        </div>
+        <div class="card">
+          <h3>Food Service Streamlining System</h3>
+          <p>Food ordering platform with EmailJS integration and cart system.</p>
+          <a href="https://github.com/kiranmadini/FoodService" target="_blank">[GitHub]</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="certificates">
+      <h2>Certificates</h2>
+      <ul>
+        <li><a href="https://drive.google.com/file/d/1H2CHJvdvTycw6pBLf_gxSaiROI3T-M7x/view?usp=drive_link" target="_blank">AWS Academy Graduate</a></li>
+        <li><a href="https://drive.google.com/file/d/1cbhL7oQl9Zkngybq935l18x0vvbjxy_T/view?usp=drive_link" target="_blank">Infosys Python Certification</a></li>
+      </ul>
+    </section>
+
+    <section id="profiles">
+      <h2>Profile Links</h2>
+      <ul>
+        <li><a href="https://leetcode.com/u/22h51a0537/" target="_blank">LeetCode</a></li>
+        <li><a href="https://mentorpick.com/profile/22h51a0537-kiran" target="_blank">MentorPick</a></li>
+        <li><a href="https://www.codechef.com/users/kiran_madini" target="_blank">CodeChef</a></li>
+      </ul>
+    </section>
+
+    <section id="contact">
+      <h2>Contact Me</h2>
+      <form action="https://formspree.io/f/mwkgnrbj" method="POST">
+        <input type="text" name="name" placeholder="Your Name" required />
+        <input type="email" name="email" placeholder="Your Email" required />
+        <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+        <button type="submit">Send</button>
+      </form>
+    </section>
+
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Kiran Madini. All rights reserved.</p>
+  </footer>
+
+  <button id="darkToggle">Toggle Dark Mode</button>
+
+  <script>
+    const titles = ["Kiran Madini", "Frontend Developer", "Java Enthusiast"];
+    let i = 0, j = 0, current = '', isDeleting = false;
+
+    function typeEffect() {
+      const textElement = document.getElementById('typing-text');
+      if (i < titles.length) {
+        if (!isDeleting && j <= titles[i].length) {
+          current = titles[i].substring(0, j++);
+        } else if (isDeleting && j >= 0) {
+          current = titles[i].substring(0, j--);
+        }
+
+        textElement.textContent = current;
+
+        if (!isDeleting && j === titles[i].length) {
+          isDeleting = true;
+          setTimeout(typeEffect, 1000);
+          return;
+        } else if (isDeleting && j === 0) {
+          isDeleting = false;
+          i = (i + 1) % titles.length;
+        }
+
+        setTimeout(typeEffect, isDeleting ? 80 : 100);
+      }
+    }
+    typeEffect();
+
+    const cards = document.querySelectorAll('.card');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('appear');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.3 });
+
+    cards.forEach(card => {
+      observer.observe(card);
+    });
+
+    document.getElementById("darkToggle").addEventListener("click", () => {
+      document.body.classList.toggle("dark");
+    });
+  </script>
+</body>
+</html>
